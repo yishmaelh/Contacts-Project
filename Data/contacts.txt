@@ -1,0 +1,3 @@
+// contact class to represent
+app class to run app(main method)
+file utility class for all methods(add, delete, etc)
