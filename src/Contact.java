@@ -1,5 +1,9 @@
 public class Contact {
 
+    // contact class to represent
+//app class to run app(main method)
+//file utility class for all methods(add, delete, etc)
+
     private String contactName;
     private String phoneNumber;
 
