@@ -6,8 +6,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
          boolean continueRunning = true;
-
-        ContactsApp.mainMenu();
+         
 
         do {
             int userSelection = ContactsApp.mainMenu();
