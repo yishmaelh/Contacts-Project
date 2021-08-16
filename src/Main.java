@@ -7,7 +7,11 @@ public class Main {
 
 //ContactsApp.mainMenu();
 
-ContactsApp.deleteContact();
+//ContactsApp.deleteContact();
+
+//ContactsApp.showAllContacts();
+        ContactsApp.addContact();
+
     }
 
 

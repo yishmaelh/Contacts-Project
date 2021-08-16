@@ -36,6 +36,10 @@ public class ContactsApp {
                 Arrays.asList(contactName + phoneNumber),
                 StandardOpenOption.APPEND
         );
+        System.out.println("You have successfully added a contact!");
+
+
+
     }
 
     public static void deleteContact() throws IOException {
@@ -57,7 +61,16 @@ public class ContactsApp {
         );
         System.out.println("It has been successfully deleted.");
     }
-
+public static void showAllContacts() throws IOException {
+    System.out.println("Here are all the current contacts!");
+    Path filepath = Paths.get("data", "contacts.txt");
+    List<String> readingContact = Files.readAllLines(filepath);
+    int index = 0;
+    for (String contact: readingContact) {
+        System.out.println(index + ": " + contact);
+        index++;
+    }
+}
 
 
 }
