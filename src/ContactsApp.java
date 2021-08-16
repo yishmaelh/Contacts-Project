@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.sql.SQLOutput;
 import java.util.*;
 import java.io.IOException;
@@ -11,14 +12,18 @@ public class ContactsApp {
     public static int mainMenu() throws IOException {
         Path filepath = Paths.get("data", "contacts.txt");
         List<String> contactList = Files.readAllLines(filepath);
-        System.out.println(contactList);
-
+        int index = 0;
+        for (String contact : contactList) {
+            System.out.println(index + ":" + contact);
+            index++;
+        }
         System.out.println("Please make a selection:");
         System.out.println(" 1.View contacts");
         System.out.println(" 2. Add new contact");
         System.out.println(" 3. Search contact by name or number");
         System.out.println(" 4. Delete a contact");
         System.out.println(" 5. Exit application");
+        System.out.println("Enter an option (1, 2, 3, 4 or 5)");
 
         Scanner myScanner = new Scanner(System.in);
         int userSelection = myScanner.nextInt();
@@ -33,11 +38,10 @@ public class ContactsApp {
         String phoneNumber = myScanner.nextLine();
         Files.write(
                 Paths.get("data", "contacts.txt"),
-                Arrays.asList(contactName + phoneNumber),
+                Arrays.asList(contactName +  phoneNumber),
                 StandardOpenOption.APPEND
         );
         System.out.println("You have successfully added a contact!");
-
 
 
     }
@@ -47,7 +51,7 @@ public class ContactsApp {
         Path filepath = Paths.get("data", "contacts.txt");
         List<String> readingContact = Files.readAllLines(filepath);
         int index = 0;
-        for (String contact: readingContact) {
+        for (String contact : readingContact) {
             System.out.println(index + ": " + contact);
             index++;
         }
@@ -61,28 +65,39 @@ public class ContactsApp {
         );
         System.out.println("It has been successfully deleted.");
     }
-public static void showAllContacts() throws IOException {
-    System.out.println("Here are all the current contacts!");
-    Path filepath = Paths.get("data", "contacts.txt");
-    List<String> readingContact = Files.readAllLines(filepath);
-    int index = 0;
-    for (String contact: readingContact) {
-        System.out.println(index + ": " + contact);
-        index++;
+
+    public static void showAllContacts() throws IOException {
+        System.out.println("Here are all the current contacts!");
+        Path filepath = Paths.get("data", "contacts.txt");
+        List<String> readingContact = Files.readAllLines(filepath);
+        int index = 0;
+        for (String contact : readingContact) {
+            System.out.println(index + ": " + contact);
+            index++;
+        }
     }
-}
-public static void searchAllContacts() throws IOException {
-    Scanner myScanner = new Scanner(System.in);
-    System.out.println("What contact are you looking for ?");
-    String userSearch = myScanner.nextLine();
-    Path filepath = Paths.get("data", "contacts.txt");
-    List<String> readingContact = Files.readAllLines(filepath);
-    for (String contact: readingContact) {
-       if (contact.toLowerCase().contains(userSearch.trim().toLowerCase())){
-           System.out.println(contact);
-       }
+
+    public static void searchAllContacts() throws IOException {
+        Scanner myScanner = new Scanner(System.in);
+        System.out.println("What contact are you looking for ?");
+        String userSearch = myScanner.nextLine();
+        Path filepath = Paths.get("data", "contacts.txt");
+        List<String> readingContact = Files.readAllLines(filepath);
+        for (String contact : readingContact) {
+            if (contact.toLowerCase().contains(userSearch.trim().toLowerCase())) {
+                System.out.println(contact);
+            }
+
+
+        }
 
     }
+
+    public static void exit() {
+
+        System.out.println("Closing application...");
+        System.exit(0);
+    }
 }
 
-}
+
