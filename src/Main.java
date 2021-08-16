@@ -10,7 +10,9 @@ public class Main {
 //ContactsApp.deleteContact();
 
 //ContactsApp.showAllContacts();
-        ContactsApp.addContact();
+       // ContactsApp.addContact();
+
+        ContactsApp.searchAllContacts();
 
     }
 
