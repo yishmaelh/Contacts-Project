@@ -5,9 +5,9 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-ContactsApp.mainMenu();
+//ContactsApp.mainMenu();
 
-
+ContactsApp.deleteContact();
     }
 
 
