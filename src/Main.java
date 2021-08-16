@@ -16,7 +16,7 @@ public class Main {
             else if (userSelection == 2) {
                 ContactsApp.addContact();
             } else if (userSelection == 3) {
-                ContactsApp.showAllContacts();
+                ContactsApp.searchAllContacts();
             } else if (userSelection == 4) {
                 ContactsApp.deleteContact();
             } else if (userSelection == 5) {

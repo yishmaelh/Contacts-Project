@@ -18,7 +18,7 @@ public class ContactsApp {
             index++;
         }
         System.out.println("Please make a selection:");
-        System.out.println(" 1.View contacts");
+        System.out.println(" 1. View contacts");
         System.out.println(" 2. Add new contact");
         System.out.println(" 3. Search contact by name or number");
         System.out.println(" 4. Delete a contact");
@@ -33,7 +33,7 @@ public class ContactsApp {
     public static void addContact() throws IOException {
         Scanner myScanner = new Scanner(System.in);
         System.out.println("Enter first and last name: ");
-        String contactName = myScanner.nextLine();
+        String contactName = myScanner.nextLine() + " ";
         System.out.println("Enter the phone number: ");
         String phoneNumber = myScanner.nextLine();
         Files.write(
