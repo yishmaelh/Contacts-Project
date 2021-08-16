@@ -73,13 +73,13 @@ public static void showAllContacts() throws IOException {
 }
 public static void searchAllContacts() throws IOException {
     Scanner myScanner = new Scanner(System.in);
-    String userSearch = myScanner.nextLine();
     System.out.println("What contact are you looking for ?");
+    String userSearch = myScanner.nextLine();
     Path filepath = Paths.get("data", "contacts.txt");
     List<String> readingContact = Files.readAllLines(filepath);
     for (String contact: readingContact) {
-       if (contact.toLowerCase().contains(userSearch.toLowerCase())){
-           System.out.println();
+       if (contact.toLowerCase().contains(userSearch.trim().toLowerCase())){
+           System.out.println(contact);
        }
 
     }
